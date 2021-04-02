@@ -1,17 +1,19 @@
 <template>
   <div>
-控制台
+温度
   </div>
 </template>
 
 <script>
 export default {
-  name: "控制台",
+  name: 'Tem',
   components: {
+    
   },
   data() {
     return {
-    };
+      
+    };  
   }
 };
 </script>

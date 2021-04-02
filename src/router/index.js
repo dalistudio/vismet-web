@@ -10,18 +10,18 @@ import Layout from '@/layout'
  * Note: sub-menu only appear when route children.length >= 1
  * Detail see: https://panjiachen.github.io/vue-element-admin-site/guide/essentials/router-and-nav.html
  *
- * hidden: true                   if set true, item will not show in the sidebar(default is false)
- * alwaysShow: true               if set true, will always show the root menu
- *                                if not set alwaysShow, when item has more than one children route,
- *                                it will becomes nested mode, otherwise not show the root menu
- * redirect: noRedirect           if set noRedirect will no redirect in the breadcrumb
- * name:'router-name'             the name is used by <keep-alive> (must set!!!)
+ * hidden: true                   如果设置为 true, 此项将不在边栏中显示(默认为 false)
+ * alwaysShow: true               如果设置为 true, 将始终显示在根菜单
+ *                                如果不设置 alwaysShow 参数, 当项目有多个子路由时，
+ *                                它将变成嵌套模式，否则不显示根菜单。
+ * redirect: noRedirect           如果设置 noRedirect 参数， 则不会在面包屑中重定向
+ * name:'router-name'             这个名称由 <keep-alive> 使用(必须设置!!!)
  * meta : {
-    roles: ['admin','editor']    control the page roles (you can set multiple roles)
-    title: 'title'               the name show in sidebar and breadcrumb (recommend set)
-    icon: 'svg-name'/'el-icon-x' the icon show in the sidebar
-    breadcrumb: false            if set false, the item will hidden in breadcrumb(default is true)
-    activeMenu: '/example/list'  if set path, the sidebar will highlight the path you set
+    roles: ['admin','editor']    控制页面角色（可以设置多个角色）
+    title: 'title'               侧边栏和面包屑中显示的名称（推荐设置）
+    icon: 'svg-name'/'el-icon-x' 图标显示在侧边栏中
+    breadcrumb: false            如果设置为 false, 此项将在面包屑中隐藏(默认为 true)
+    activeMenu: '/example/list'  如果设置了 path, 侧边栏将高粱显示你设置的路径
   }
  */
 
@@ -56,106 +56,90 @@ export const constantRoutes = [
   },
 
   {
-    path: '/example',
+    path: '/pre',
     component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
-    meta: { title: '例子', icon: 'el-icon-s-help' },
-    children: [
-      {
-        path: 'table',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: '表格', icon: 'table' }
-      },
-      {
-        path: 'tree',
-        name: 'Tree',
-        component: () => import('@/views/tree/index'),
-        meta: { title: '树形', icon: 'tree' }
-      }
-    ]
+    children: [{
+      path: 'index',
+      name: 'Pre',
+      component: () => import('@/views/pre/index'),
+      meta: { title: '降水量', icon: 'example' }
+    }]
   },
 
   {
-    path: '/form',
+    path: '/tem',
     component: Layout,
     children: [
       {
         path: 'index',
-        name: 'Form',
-        component: () => import('@/views/form/index'),
-        meta: { title: '表单', icon: 'form' }
+        name: 'Tem',
+        component: () => import('@/views/tem/index'),
+        meta: { title: '气温', icon: 'form' }
       }
     ]
   },
 
   {
-    path: '/nested',
+    path: '/win',
     component: Layout,
-    redirect: '/nested/menu1',
-    name: 'Nested',
-    meta: {
-      title: '嵌套',
-      icon: 'nested'
-    },
     children: [
       {
-        path: 'menu1',
-        component: () => import('@/views/nested/menu1/index'), // Parent router-view
-        name: 'Menu1',
-        meta: { title: '菜单1' },
-        children: [
-          {
-            path: 'menu1-1',
-            component: () => import('@/views/nested/menu1/menu1-1'),
-            name: 'Menu1-1',
-            meta: { title: 'Menu1-1' }
-          },
-          {
-            path: 'menu1-2',
-            component: () => import('@/views/nested/menu1/menu1-2'),
-            name: 'Menu1-2',
-            meta: { title: 'Menu1-2' },
-            children: [
-              {
-                path: 'menu1-2-1',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-1'),
-                name: 'Menu1-2-1',
-                meta: { title: 'Menu1-2-1' }
-              },
-              {
-                path: 'menu1-2-2',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-2'),
-                name: 'Menu1-2-2',
-                meta: { title: 'Menu1-2-2' }
-              }
-            ]
-          },
-          {
-            path: 'menu1-3',
-            component: () => import('@/views/nested/menu1/menu1-3'),
-            name: 'Menu1-3',
-            meta: { title: 'Menu1-3' }
-          }
-        ]
-      },
-      {
-        path: 'menu2',
-        component: () => import('@/views/nested/menu2/index'),
-        name: 'Menu2',
-        meta: { title: '菜单2' }
+        path: 'index',
+        name: 'Win',
+        component: () => import('@/views/win/index'),
+        meta: { title: '风向风速', icon: 'user' }
       }
     ]
   },
 
   {
-    path: 'external-link',
+    path: '/prs',
     component: Layout,
     children: [
       {
-        path: 'http://vismet.net/',
-        meta: { title: '外链', icon: 'link' }
+        path: 'index',
+        name: 'Prs',
+        component: () => import('@/views/prs/index'),
+        meta: { title: '气压', icon: 'nested' }
+      }
+    ]
+  },
+
+  {
+    path: '/rhu',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'Rhu',
+        component: () => import('@/views/rhu/index'),
+        meta: { title: '相对湿度', icon: 'table' }
+      }
+    ]
+  },
+
+  {
+    path: '/vis',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'Vis',
+        component: () => import('@/views/vis/index'),
+        meta: { title: '能见度', icon: 'tree' }
+      }
+    ]
+  },
+
+  {
+    path: '/lig',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'Lig',
+        component: () => import('@/views/lig/index'),
+        meta: { title: '闪电', icon: 'link' }
       }
     ]
   },

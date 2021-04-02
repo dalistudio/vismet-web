@@ -1,16 +1,18 @@
 <template>
   <div>
-控制台
+相对湿度
   </div>
 </template>
 
 <script>
 export default {
-  name: "控制台",
+  name: 'Rhu',
   components: {
+    
   },
   data() {
     return {
+      
     };
   }
 };

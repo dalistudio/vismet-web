@@ -24,7 +24,7 @@ export default {
   },
   data() {
     return {
-      title: 'VisMet.Net', // 侧边栏Logo 标题
+      title: '海南可视化气象网', // 侧边栏Logo 标题
       logo: '/images/logo.png' // 侧边栏Logo 地址
     }
   }

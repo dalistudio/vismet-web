@@ -15,12 +15,7 @@ import router from './router'
 import '@/icons' // icon
 import '@/permission' // permission control
 
-import { LMap, LTileLayer, LMarker } from 'vue2-leaflet';
 import 'leaflet/dist/leaflet.css';
-
-Vue.component('l-map', LMap);
-Vue.component('l-tile-layer', LTileLayer);
-Vue.component('l-marker', LMarker);
 
 /**
  * 如果你不想使用 mock-server

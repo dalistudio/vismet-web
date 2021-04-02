@@ -1,16 +1,17 @@
 <template>
   <div>
-控制台
+闪电
   </div>
 </template>
 
 <script>
 export default {
-  name: "控制台",
+  name: 'Lig',
   components: {
   },
   data() {
     return {
+     
     };
   }
 };

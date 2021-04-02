@@ -1,16 +1,18 @@
 <template>
   <div>
-控制台
+能见度
   </div>
 </template>
 
 <script>
 export default {
-  name: "控制台",
+  name: 'Vis',
   components: {
+    
   },
   data() {
     return {
+      
     };
   }
 };
